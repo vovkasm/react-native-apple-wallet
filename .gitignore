@@ -1,0 +1,16 @@
+## OSX
+.DS_Store
+
+## Xcode
+xcuserdata/
+
+## Obj-C/Swift specific
+*.hmap
+*.ipa
+*.dSYM.zip
+*.dSYM
+
+## node
+node_modules/
+npm-debug.log
+

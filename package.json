@@ -1,0 +1,50 @@
+{
+  "name": "react-native-apple-wallet",
+  "version": "0.0.1",
+  "description": "An API to work with Apple PassKit entries",
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "scripts": {
+    "build": "tsc",
+    "prestart": "npm run build",
+    "start": "react-native start",
+    "run-sample-android": "react-native run-android --root samples/SampleApp",
+    "run-sample-ios": "react-native run-ios --project-path samples/SampleApp/ios",
+    "lint:js": "tslint -p tsconfig.json"
+  },
+  "keywords": [
+    "react-native",
+    "react-component",
+    "ios",
+    "passkit",
+    "wallet",
+    "mobile"
+  ],
+  "author": "Vladimir Timofeev <vovkasm@gmail.com>",
+  "homepage": "https://github.com/vovkasm/react-native-apple-wallet",
+  "bugs": {
+    "url": "https://github.com/vovkasm/react-native-apple-wallet/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/vovkasm/react-native-apple-wallet.git"
+  },
+  "license": "MIT",
+  "devDependencies": {
+    "@types/react": "^16.7.6",
+    "@types/react-native": "^0.57.10",
+    "@vovkasm/tslint-config": "2.0.1",
+    "babel-core": "7.0.0-bridge.0",
+    "metro-react-native-babel-preset": "0.48.5",
+    "react": "16.6.3",
+    "react-native": "0.57.8",
+    "tslint": "^5.11.0",
+    "typescript": "^3.1.6"
+  },
+  "peerDependencies": {
+    "react-native": ">=0.55.0"
+  },
+  "dependencies": {
+    "tslib": "^1.9.0"
+  }
+}
