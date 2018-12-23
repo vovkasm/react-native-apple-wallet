@@ -6,4 +6,5 @@ targets:
     type: library.static
     platform: iOS
     deploymentTarget: "10.0"
-    sources: [RNAW]
+    sources:
+      - RNAW
