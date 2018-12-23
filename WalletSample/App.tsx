@@ -1,6 +1,8 @@
 import React from 'react'
 import { Platform, StyleSheet, Text, View } from 'react-native'
 
+import * as Wallet from 'react-native-apple-wallet'
+
 const instructions = Platform.select({
   android:
   'Double tap R on your keyboard to reload,\n' +
@@ -9,6 +11,11 @@ const instructions = Platform.select({
 })
 
 export default class App extends React.Component {
+  componentDidMount() {
+    Wallet.canAddPaymentPass().then((val) => {
+      console.log('canAddPaymentPass: ', val)
+    })
+  }
   render() {
     return (
       <View style={styles.container}>

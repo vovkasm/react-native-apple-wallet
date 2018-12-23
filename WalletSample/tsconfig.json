@@ -1,0 +1,24 @@
+{
+    "compilerOptions": {
+      "allowSyntheticDefaultImports": true,
+      "declaration": true,
+      "esModuleInterop": true,
+      "jsx": "react-native",
+      "importHelpers": true,
+      "lib": ["es6"],
+      "module": "commonjs",
+      "moduleResolution": "node",
+      "noImplicitReturns": true,
+      "noUnusedLocals": true,
+      "preserveSymlinks": true,
+      "strict": true,
+      "target": "es6",
+      "types": ["react", "react-native"],
+      "noEmit": true,
+      "baseUrl": ".",
+      "paths": {
+          "react-native-apple-wallet": ["../lib/src"]
+      }
+    },
+  }
+  
