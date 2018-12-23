@@ -2,15 +2,16 @@
   "name": "react-native-apple-wallet",
   "version": "0.0.1",
   "description": "An API to work with Apple PassKit entries",
-  "main": "./dist/index.js",
-  "types": "./dist/index.d.ts",
+  "main": "./lib/dist/index.js",
+  "types": "./lib/dist/index.d.ts",
   "scripts": {
     "build": "tsc",
     "prestart": "npm run build",
     "start": "react-native start",
     "run-sample-android": "react-native run-android --root samples/SampleApp",
     "run-sample-ios": "react-native run-ios --project-path samples/SampleApp/ios",
-    "lint:js": "tslint -p tsconfig.json"
+    "lint:js": "tslint -p tsconfig.json",
+    "ios:genproj": "xcodegen generate -s lib/ios/project.yml"
   },
   "keywords": [
     "react-native",

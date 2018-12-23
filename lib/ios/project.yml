@@ -1,0 +1,9 @@
+name: RNAW
+options:
+  bundleIdPrefix: org.vovkasm.rnaw
+targets:
+  RNAW:
+    type: library.static
+    platform: iOS
+    deploymentTarget: "10.0"
+    sources: [RNAW]

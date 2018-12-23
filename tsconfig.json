@@ -10,7 +10,7 @@
     "moduleResolution": "node",
     "noImplicitReturns": true,
     "noUnusedLocals": true,
-    "outDir": "dist",
+    "outDir": "lib/dist",
     "preserveSymlinks": true,
     "strict": true,
     "target": "es6",
@@ -18,6 +18,6 @@
     "baseUrl": "lib",
   },
   "include": [
-    "lib/*"
+    "lib/src/*"
   ]
 }
