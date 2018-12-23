@@ -944,7 +944,7 @@
 					"-ObjC",
 					"-lc++",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "org.reactjs.native.example.$(PRODUCT_NAME:rfc1034identifier)";
+				PRODUCT_BUNDLE_IDENTIFIER = org.vovkasm.rnawsample.WalletSample;
 				PRODUCT_NAME = WalletSample;
 				VERSIONING_SYSTEM = "apple-generic";
 			};
@@ -962,7 +962,7 @@
 					"-ObjC",
 					"-lc++",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "org.reactjs.native.example.$(PRODUCT_NAME:rfc1034identifier)";
+				PRODUCT_BUNDLE_IDENTIFIER = org.vovkasm.rnawsample.WalletSample;
 				PRODUCT_NAME = WalletSample;
 				VERSIONING_SYSTEM = "apple-generic";
 			};
