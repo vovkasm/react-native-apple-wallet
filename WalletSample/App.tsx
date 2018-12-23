@@ -1,47 +1,52 @@
 import React from 'react'
-import { Platform, StyleSheet, Text, View } from 'react-native'
+import { Button, StyleSheet, View } from 'react-native'
+
+// tslint:disable:no-console
 
 import * as Wallet from 'react-native-apple-wallet'
 
-const instructions = Platform.select({
-  android:
-  'Double tap R on your keyboard to reload,\n' +
-  'Shake or press menu button for dev menu',
-  ios: 'Press Cmd+R to reload,\n' + 'Cmd+D or shake for dev menu',
-})
-
 export default class App extends React.Component {
-  componentDidMount() {
+  render() {
+    return (
+      <View style={styles.container}>
+        <Button title="can add payment pass?" onPress={this.handleCheck} />
+        <Button title="add payment pass" onPress={this.handleAdd} />
+      </View>
+    )
+  }
+
+  private handleCheck = () => {
     Wallet.canAddPaymentPass().then((val) => {
       console.log('canAddPaymentPass: ', val)
     })
   }
-  render() {
-    return (
-      <View style={styles.container}>
-        <Text style={styles.welcome}>Welcome to React Native!</Text>
-        <Text style={styles.instructions}>To get started, edit App.js</Text>
-        <Text style={styles.instructions}>{instructions}</Text>
-      </View>
-    )
+  private handleAdd = () => {
+    Wallet.startAddPaymentPass({
+      cardholderName: 'Sandbox',
+      encryptionScheme: 'RSA_V2',
+      primaryAccountSuffix: '1471',
+    }).then((res) => {
+      // same as https://github.com/tomavic/cordova-apple-wallet#start-adding-card
+      console.log('result is', res)
+      const data = {
+        activationData: 'encoded Base64 activationData from your server',
+        encryptedPassData: 'encoded Base64 encryptedPassData from your server',
+        wrappedKey: 'encoded Base64 wrappedKey from your server',
+      }
+      return Wallet.completeAddPaymentPass(data)
+    }).then(() => {
+      console.log('Card was added!')
+    }).catch((e) => {
+      console.log('err: ', e)
+    })
   }
 }
 
 const styles = StyleSheet.create({
   container: {
     alignItems: 'center',
-    backgroundColor: '#F5FCFF',
+    backgroundColor: 'white',
     flex: 1,
     justifyContent: 'center',
-  },
-  instructions: {
-    color: '#333333',
-    marginBottom: 5,
-    textAlign: 'center',
-  },
-  welcome: {
-    fontSize: 20,
-    margin: 10,
-    textAlign: 'center',
   },
 })
